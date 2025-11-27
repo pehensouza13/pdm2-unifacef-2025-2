@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     botoesContainer: {
         width: '100%',
         alignItems: 'center',
-        marginTop: 8,        // espaço entre o texto e os botões
+        marginTop: 8
     },
     botao: {
         backgroundColor: '#e5e5e5',
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         borderRadius: 6,
         minWidth: 220,
         alignItems: 'center',
-        marginVertical: 6,   // <-- ESSE CARA SEPARA UM BOTÃO DO OUTRO
+        marginVertical: 6
     },
     textoBotao: {
         fontSize: 14,
