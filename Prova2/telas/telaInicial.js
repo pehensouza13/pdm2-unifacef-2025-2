@@ -4,20 +4,26 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 export default function HomeScreen({ navigation }) {
     return (
         <View style={styles.container}>
-            <Text style={styles.titulo}>Agenda</Text>
+            <Text style={styles.titulo}>Agenda do dia</Text>
 
-            <View style={styles.subcontainer}>
-                <Text style={styles.subtexto}>Pedro Henrique de Souza</Text>
-                <Text style={styles.subtexto}>Ciências da Computação</Text>
+            <View style={styles.infoContainer}>
+                <Text style={styles.infoTexto}>Pedro Henrique de Souza</Text>
+                <Text style={styles.infoTexto}>Ciências da Computação</Text>
             </View>
 
-            <View style={styles.actions}>
-                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Dia')}>
-                    <Text style={styles.buttonText}>COMPROMISSOS DO DIA</Text>
+            <View style={styles.botoesContainer}>
+                <TouchableOpacity
+                    style={styles.botao}
+                    onPress={() => navigation.navigate('Dia')}
+                >
+                    <Text style={styles.textoBotao}>Meus compromissos</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Semana')}>
-                    <Text style={styles.buttonText}>COMPROMISSOS DA SEMANA</Text>
+                <TouchableOpacity
+                    style={styles.botao}
+                    onPress={() => navigation.navigate('Semana')}
+                >
+                    <Text style={styles.textoBotao}>Compromissos da equipe</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -25,19 +31,42 @@ export default function HomeScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    container: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24, backgroundColor: '#fff' },
-    titulo: { fontSize: 28, fontWeight: '700', marginBottom: 12 },
-    subcontainer: { alignItems: 'center', marginBottom: 32 },
-    subtexto: { fontSize: 14, color: '#444' },
-    actions: { gap: 12, width: '100%' },
-    button: {
-        backgroundColor: '#d1d5db', // cinza claro
-        paddingVertical: 10,
-        paddingHorizontal: 14,
-        borderRadius: 6,
-        alignSelf: 'center',
-        minWidth: 240,
+    container: {
+        flex: 1,
+        backgroundColor: '#ffffff',
         alignItems: 'center',
+        justifyContent: 'center',
+        paddingHorizontal: 24,
     },
-    buttonText: { fontWeight: '700', letterSpacing: 0.5, color: '#111' },
+    titulo: {
+        fontSize: 24,
+        fontWeight: '600',
+        marginBottom: 16,
+    },
+    infoContainer: {
+        alignItems: 'center',
+        marginBottom: 32,
+    },
+    infoTexto: {
+        fontSize: 14,
+        color: '#555555',
+    },
+    botoesContainer: {
+        width: '100%',
+        alignItems: 'center',
+        marginTop: 8,        // espaço entre o texto e os botões
+    },
+    botao: {
+        backgroundColor: '#e5e5e5',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 6,
+        minWidth: 220,
+        alignItems: 'center',
+        marginVertical: 6,   // <-- ESSE CARA SEPARA UM BOTÃO DO OUTRO
+    },
+    textoBotao: {
+        fontSize: 14,
+        color: '#333333',
+    },
 });
